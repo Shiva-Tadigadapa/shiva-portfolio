@@ -7,14 +7,12 @@ import "./App.css";
 import { useCursor } from "../src/context/useCustomCursor";
 import { getVariants } from "../src/context/variants";
 import { useMainDashContext } from "../src/context/AppContext";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const App = () => {
   const { isDarkMode, setIsDarkMode } = useMainDashContext();
   const { mousePosition, cursorVariant, textEnter, textLeave } = useCursor();
 
   const variants = getVariants(mousePosition);
-
- 
 
   const [landingLoaded, setLandingLoaded] = useState(false);
 
@@ -26,6 +24,7 @@ const App = () => {
 
   return (
     <>
+     
       {mousePosition ? (
         <>
           <motion.div
@@ -61,6 +60,7 @@ const App = () => {
           </motion.div>
         </AnimatePresence>
       )}
+    <SpeedInsights/>
     </>
   );
 };
