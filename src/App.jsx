@@ -25,7 +25,6 @@ const App = () => {
 
   return (
     <>
-     
       {mousePosition ? (
         <>
           <motion.div
@@ -61,7 +60,7 @@ const App = () => {
           </motion.div>
         </AnimatePresence>
       )}
-    <SpeedInsights/>
+      <SpeedInsights />
     </>
   );
 };
