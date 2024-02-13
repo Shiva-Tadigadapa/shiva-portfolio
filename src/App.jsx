@@ -7,7 +7,7 @@ import "./App.css";
 import { useCursor } from "../src/context/useCustomCursor";
 import { getVariants } from "../src/context/variants";
 import { useMainDashContext } from "../src/context/AppContext";
-import { SpeedInsights } from "@vercel/speed-insights/next/react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const App = () => {
   const { isDarkMode, setIsDarkMode } = useMainDashContext();
@@ -60,7 +60,7 @@ const App = () => {
           </motion.div>
         </AnimatePresence>
       )}
-      <SpeedInsights />
+       <SpeedInsights />
     </>
   );
 };
