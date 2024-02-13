@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'puku';
+    src: url('./assets/oki.ttf');
+}
+
+::selection{
+  background-color: rgb(110, 96, 62);
+}
+
+*{
+  cursor: none;
+    font-family: 'Poppins', sans-serif;
+}
+.puku{
+    font-family: 'puku';
+}
+
+/* CustomCursor.css */
+
+.custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  .cursor-point {
+    /* hange the color as needed */
+    transform: translate(-50%, -50%);
+  }
+  
+  .cursor-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #000; /* Change the color as needed */
+    transform: translate(-50%, -50%);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar:hover {
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #2a2a2a;
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #141414;
+    cursor: pointer;
+  }
