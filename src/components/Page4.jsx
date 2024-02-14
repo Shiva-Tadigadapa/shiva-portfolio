@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import gotoWhite from "../assets/gotWhite.png";
+import gotoBlack from "../assets/gotoBlack.png";
 import { useCursor } from "../context/useCustomCursor";
 import Dendro from "../assets/White/ico/Anemo.ico";
 import DendroDark from "../assets/Black/ico/Anemo.ico";
@@ -22,7 +23,7 @@ const Page4 = () => {
       name: "Re:Event",
       imageUrl:
         "https://ik.imagekit.io/vsn/port/rvent.png?updatedAt=1707673045432",
-      dis: "I was responsible for the design and development of the app.",
+      dis: "A complete event management and RSVP tracking software application.",
     },
     {
       id: 3,
@@ -30,28 +31,28 @@ const Page4 = () => {
       imageUrl:
         "https://ik.imagekit.io/vsn/port/dvalidate.png?updatedAt=1707673043560",
 
-      dis: "A personal portfolio website to showcase my work and projects.",
+      dis: "A blockchain based certificate validation system.",
     },
     {
       id: 4,
       name: "Bankai",
       imageUrl:
         "https://ik.imagekit.io/vsn/port/bankai2.jpg?updatedAt=1707669907438",
-      dis: "sdjsbd",
+      dis: "A complete CMS and supply chain system application .",
     },
     {
       id: 5,
       name: "LMSEDU",
       imageUrl:
         "https://ik.imagekit.io/vsn/port/lmsed.png?updatedAt=1707673555747",
-      dis: "dsjkan",
+      dis: "A university Learning management system.",
     },
     {
       id: 6,
       name: "Health-Byte",
       imageUrl:
         "https://ik.imagekit.io/vsn/port/healthybyte.png?updatedAt=1707674846498",
-      dis: "djsnfdskj",
+      dis: "Health care management with donation, crowdfunding, video conferencing, ecom features.",
     },
 
     // Add more projects here
@@ -118,7 +119,7 @@ const Page4 = () => {
               <motion.img
                 src={project.imageUrl}
                 alt={project.name}
-                className="w-[30%] h-full hidden lg:block overflow-hidden  rounded-xl border-2 border-zinc-800 -ml-20"
+                className="w-[30%] h-full hidden lg:block md:block overflow-hidden  rounded-xl border-2 border-zinc-800 -ml-20"
                 animate={projectAnimations[index].controlsImage}
                 initial={{ x: 0, opacity: 0 }}
               />
@@ -133,14 +134,25 @@ const Page4 = () => {
                 {project.name}
               </motion.h1>
             </div>
-            <motion.img
-              src={gotoWhite}
-              alt="goto"
-              className="lg:h-10 lg:w-10 h-8 w-8 absolute  right-10 lg:right-56 lg:top-0"
-              initial={{ x: 0, opacity: 0.5 }}
-              animate={projectAnimations[index].controlsGoto}
-              transition={{ duration: 0.5 }}
-            />
+            {isDarkMode ? (
+              <motion.img
+                src={gotoWhite}
+                alt="goto"
+                className="lg:h-10 lg:w-10 h-8 w-8 absolute  right-10 lg:right-56 lg:top-0"
+                initial={{ x: 0, opacity: 0.5 }}
+                animate={projectAnimations[index].controlsGoto}
+                transition={{ duration: 0.5 }}
+              />
+            ) : (
+              <motion.img
+                src={gotoBlack}
+                alt="goto"
+                className="lg:h-10 lg:w-10 h-8 w-8 absolute  right-10 lg:right-56 lg:top-0"
+                initial={{ x: 0, opacity: 0.8 }}
+                animate={projectAnimations[index].controlsGoto}
+                transition={{ duration: 0.5 }}
+              />
+            )}
           </motion.div>
           <h1 className="absolute right-10 bottom-3 text-gray-400 text-sm discription">
             {project.dis}

@@ -8,7 +8,7 @@ import Page4 from "../components/Page4";
 import Page5 from "../components/Page5";
 
 const Holder = () => {
-  const { isDarkMode, setIsDarkMode } = useMainDashContext();
+  const { isDarkMode } = useMainDashContext();
 
 
   return (

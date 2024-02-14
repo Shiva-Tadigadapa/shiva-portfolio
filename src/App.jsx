@@ -1,5 +1,5 @@
 // App.js
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Holder from "./pages/Holder";
 import Loader from "./pages/Loader";
@@ -9,10 +9,13 @@ import { getVariants } from "../src/context/variants";
 import { useMainDashContext } from "../src/context/AppContext";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  const { isDarkMode, setIsDarkMode } = useMainDashContext();
-  const { mousePosition, cursorVariant, textEnter, textLeave } = useCursor();
+  const { isDarkMode } = useMainDashContext();
+  const { mousePosition, cursorVariant } = useCursor();
 
   const variants = getVariants(mousePosition);
 
@@ -23,6 +26,26 @@ const App = () => {
       setLandingLoaded(true);
     }, 2800);
   }, []);
+
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+  
+    if (container) {
+      gsap.to(container, {
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 2.5,
+        },
+        y: () => `-${Math.max(0, container.offsetHeight - window.innerHeight)}px`, // Ensure y doesn't go below 0
+        ease: "none",
+      });
+    }
+  }, []);
+  
 
   return (
     <>
@@ -46,23 +69,25 @@ const App = () => {
           />
         </>
       ) : null}
-      {landingLoaded ? (
-        <Holder />
-      ) : (
-        <AnimatePresence>
-          <motion.div
-            className="bg-black w-full h-[100vh] items-center justify-center flex flex-col"
-            exit={{
-              y: 500,
-              transition: {},
-            }}
-          >
-            <Loader xl={"xl"} />
-          </motion.div>
-        </AnimatePresence>
-      )}
-      <Analytics />
-      <SpeedInsights />
+        {landingLoaded ? (
+      <div ref={containerRef}>
+          <Holder />
+            </div>
+        ) : (
+          <AnimatePresence>
+            <motion.div
+              className="bg-black w-full h-[100vh] items-center justify-center flex flex-col"
+              exit={{
+                y: 500,
+                transition: {},
+              }}
+            >
+              <Loader xl={"xl"} />
+            </motion.div>
+          </AnimatePresence>
+        )}
+        <Analytics />
+        <SpeedInsights />
     </>
   );
 };

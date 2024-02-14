@@ -12,25 +12,7 @@ const Page1 = () => {
   const toggleDarkMode = (checked) => {
     setIsDarkMode(checked);
   };
-
-  // const [time, setTime] = useState(getFormattedTime());
-
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setTime(getFormattedTime());
-  //   }, 1000);
-
-  //   return () => clearInterval(intervalId);
-  // }, []);
-
-  // function getFormattedTime() {
-  //   const date = new Date();
-  //   const hours = date.getHours();
-  //   const minutes = date.getMinutes();
-  //   const seconds = date.getSeconds();
-  //   return `${hours}:${minutes}:${seconds}`;
-  // }
-
+  
   return (
     <div className="flex items-center p-10 justify-between">
       <h1

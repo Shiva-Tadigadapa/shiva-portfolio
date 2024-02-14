@@ -3,6 +3,9 @@ import img9 from "../assets/White/ico/Electro.ico";
 import img10 from "../assets/Black/ico/Electro.ico";
 import { useCursor } from "../context/useCustomCursor";
 import { useMainDashContext } from "../context/AppContext";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Page2 = () => {
   const { isDarkMode} = useMainDashContext();
@@ -53,13 +56,14 @@ const Page2 = () => {
       ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
     };
   }, [isDarkMode]);
+  
 
   return (
     <>
       <div className="lg:p-14 p-10 lg:mt-0 flex flex-col relative">
-        <div>
-          <h1 className="lg:text-9xl text-6xl font-semibold tracking-wide ">FULLSTACK </h1>
-          <h1 className="lg:text-9xl text-6xl font-semibold px-8 lg:px-14 tracking-wide">
+        <div className="  ">
+          <h1 className="lg:text-9xl md:text-8xl sm:text-6xl  text-5xl font-semibold tracking-wide ">FULLSTACK </h1>
+          <h1 className="lg:text-9xl md:text-8xl sm:text-6xl  text-5xl font-semibold px-8 lg:px-14 tracking-wide">
             DEVELOPER
           </h1>
         </div>
