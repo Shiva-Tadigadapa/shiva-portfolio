@@ -56,17 +56,17 @@ const Page2 = () => {
 
   return (
     <>
-      <div className="p-14 flex flex-col relative">
+      <div className="lg:p-14 p-10 lg:mt-0 flex flex-col relative">
         <div>
-          <h1 className="text-9xl font-semibold tracking-wide ">FULLSTACK </h1>
-          <h1 className="text-9xl font-semibold px-14 tracking-wide">
+          <h1 className="lg:text-9xl text-6xl font-semibold tracking-wide ">FULLSTACK </h1>
+          <h1 className="lg:text-9xl text-6xl font-semibold px-8 lg:px-14 tracking-wide">
             DEVELOPER
           </h1>
         </div>
-        <div className="scroll-down ml-[85%] mt-[8%] overflow-hidden ">
+        <div className="scroll-down lg:ml-[85%] ml-[30%] mt-[8%] overflow-hidden ">
           <canvas
             id="circleTextCanvas"
-            className="h-24 w-48 overflow-hidden animate-spin-slow" // Increase height and width
+            className="h-24 w-48 hidden lg:block overflow-hidden animate-spin-slow" // Increase height and width
             width="200" // Adjust canvas size
             height="100"
             onMouseEnter={textEnter}

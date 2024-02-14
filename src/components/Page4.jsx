@@ -64,7 +64,7 @@ const Page4 = () => {
   }));
 
   return (
-    <div className="p-20 relative overflow-hidden">
+    <div className="lg:p-20  p-10 relative overflow-hidden">
       <div>
         <div className=" flex items-center gap-3">
           {isDarkMode ? (
@@ -72,14 +72,14 @@ const Page4 = () => {
           ) : (
             <img src={DendroDark} className="w-7   h-7" alt="Dendro" />
           )}
-          <h1 className="text-4xl"> Selected Projects</h1>
+          <h1 className="lg:text-4xl text-2xl"> Selected Projects</h1>
         </div>
         <hr className="mt-5 border-[#2b262b] mb-5" />
       </div>
       {projects.map((project, index) => (
         <div key={project.id} className="relative">
           <motion.div
-            className="h-[200px] gap-5 flex items-center relative"
+            className="lg:h-[200px] h-[150px] gap-5 flex items-center relative"
             whileHover={{ scale: 0.95 }}
             onHoverStart={() => {
               projectAnimations[index].controlsImage.start({
@@ -117,12 +117,12 @@ const Page4 = () => {
             <div className="flex   items-center">
               <motion.img
                 src={project.imageUrl}
-                className="w-[30%] h-full overflow-hidden  rounded-xl border-2 border-zinc-800 -ml-20"
+                className="w-[30%] h-full hidden lg:block overflow-hidden  rounded-xl border-2 border-zinc-800 -ml-20"
                 animate={projectAnimations[index].controlsImage}
                 initial={{ x: 0, opacity: 0 }}
               />
               <motion.h1
-                className="text-8xl -ml-[18rem]"
+                className="lg:text-8xl text-5xl lg:-ml-[18rem]"
                 initial={{ x: 0 }}
                 animate={projectAnimations[index].controlsText}
                 transition={{ duration: 0.5 }}
@@ -134,7 +134,7 @@ const Page4 = () => {
             </div>
             <motion.img
               src={gotoWhite}
-              className="h-10 w-10 absolute right-56 top-0"
+              className="lg:h-10 lg:w-10 h-8 w-8 absolute  right-10 lg:right-56 lg:top-0"
               initial={{ x: 0, opacity: 0.5 }}
               animate={projectAnimations[index].controlsGoto}
               transition={{ duration: 0.5 }}

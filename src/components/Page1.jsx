@@ -36,26 +36,27 @@ const Page1 = () => {
       <h1
         className={`${
           isDarkMode ? "bg-dark text-light" : "bg-light"
-        } text-4xl puku ml-5 font-medium`}
+        } lg:text-4xl puku ml-5 font-medium`}
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
       >
         BALA SHIVA T.
       </h1>
       <div>
+
         <div
-          className="flex items-center  justify-center gap-5 "
+          className="flex items-center  justify-center gap-2 lg:gap-5 "
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
         >
           <div>
-            <h1 className="text-lg font-semibold tracking-wider">
+            <h1 className="lg:text-lg text-xs font-semibold tracking-wider">
               OPEN TO WORK
             </h1>
             <h1 className="text-xs  tracking-widest">Based In India</h1>
           </div>
           {isDarkMode ? (
-            <motion.img src={img9} className="h-9 w-9 animate-spin-slow" />
+            <motion.img src={img9} className="lg:h-9 lg:w-9 h-5 w-5 animate-spin-slow" />
           ) : (
             <motion.img src={img10} className="h-9 w-9 animate-spin-slow" />
           )}

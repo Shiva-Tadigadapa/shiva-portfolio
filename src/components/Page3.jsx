@@ -9,7 +9,7 @@ const Page3 = () => {
   return (
     <div>
       <h1
-        className="text-7xl p-20"
+        className="lg:text-7xl  p-10 text-4xl   lg:p-20"
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
       >

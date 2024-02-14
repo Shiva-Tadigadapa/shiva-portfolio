@@ -8,11 +8,11 @@ const Page5 = () => {
   const { isDarkMode } = useMainDashContext();
   const { textEnter, textLeave } = useCursor();
   return (
-    <div className="p-20 justify-around gap-24 h-screen flex flex-col">
+    <div className="lg:p-20 p-10 justify-around gap-24 lg:h-screen flex flex-col">
       <div className="flex flex-col gap-8">
-        <h1 className="text-4xl">Who stands behind your Work's?</h1>
+        <h1 className="lg:text-4xl text-2xl">Who stands behind your Work's?</h1>
         <h1
-          className="w-[80%] tracking-wider  text-6xl"
+          className="lg:w-[80%] tracking-wider  text-4xl lg:text-6xl"
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
         >
@@ -27,17 +27,17 @@ const Page5 = () => {
           <h1
             className={`rounded-full ${
               isDarkMode ? " border-white" : "border-black"
-            } border-2 px-8 py-5 text-4xl hover:bg-white/90 hover:text-black transition-all`}
+            } border-2 px-4 py-5 lg:px-8 lg:py-5 lg:text-4xl hover:bg-white/90 hover:text-black transition-all`}
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
           >
             GET IN TOUCH
           </h1>
         </div>
-        <div className="text-3xl items-start justify-between h-full gap-4 flex flex-col">
+        <div className="lg:text-3xl items-start justify-between h-full lg:gap-4 flex flex-col">
           <div className="flex group flex-col justify-center ">
             <div
-              className="flex gap-10"
+              className="flex gap-6 lg:gap-10"
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
             >
@@ -57,7 +57,7 @@ const Page5 = () => {
           </div>
           <div className="flex group flex-col justify-center ">
             <div
-              className="  flex gap-10"
+              className="  flex gap-3 lg:gap-10"
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
             >
@@ -77,7 +77,7 @@ const Page5 = () => {
           </div>
           <div className="flex group flex-col justify-center ">
             <div
-              className="flex gap-10"
+              className="flex gap-5 lg:gap-10"
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
             >
