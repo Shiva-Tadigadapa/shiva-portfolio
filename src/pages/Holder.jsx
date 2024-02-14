@@ -16,7 +16,7 @@ const Holder = () => {
       <motion.div
         className={`bg-${isDarkMode ? "dark" : "light"} text-${
           isDarkMode ? "light" : "dark"
-        }  lg:max-w-[1500px]   overflow-hidden flex flex-col justify-center   h-full`}
+        }  lg:max-w-[1500px]  select-none lg:select-auto overflow-hidden flex flex-col justify-center   h-full`}
         initial={{ opacity: 0, y: -400 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
