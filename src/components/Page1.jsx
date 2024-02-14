@@ -56,9 +56,9 @@ const Page1 = () => {
             <h1 className="text-xs  tracking-widest">Based In India</h1>
           </div>
           {isDarkMode ? (
-            <motion.img src={img9} className="lg:h-9 lg:w-9 h-5 w-5 animate-spin-slow" />
+            <motion.img src={img9} alt="dendro" className="lg:h-9 lg:w-9 h-5 w-5 animate-spin-slow" />
           ) : (
-            <motion.img src={img10} className="h-9 w-9 animate-spin-slow" />
+            <motion.img src={img10} alt="dendro" className="h-9 w-9 animate-spin-slow" />
           )}
         </div>
       </div>

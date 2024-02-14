@@ -117,6 +117,7 @@ const Page4 = () => {
             <div className="flex   items-center">
               <motion.img
                 src={project.imageUrl}
+                alt={project.name}
                 className="w-[30%] h-full hidden lg:block overflow-hidden  rounded-xl border-2 border-zinc-800 -ml-20"
                 animate={projectAnimations[index].controlsImage}
                 initial={{ x: 0, opacity: 0 }}
@@ -134,6 +135,7 @@ const Page4 = () => {
             </div>
             <motion.img
               src={gotoWhite}
+              alt="goto"
               className="lg:h-10 lg:w-10 h-8 w-8 absolute  right-10 lg:right-56 lg:top-0"
               initial={{ x: 0, opacity: 0.5 }}
               animate={projectAnimations[index].controlsGoto}
