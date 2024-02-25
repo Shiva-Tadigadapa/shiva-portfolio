@@ -9,9 +9,9 @@ import { getVariants } from "../src/context/variants";
 import { useMainDashContext } from "../src/context/AppContext";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const { isDarkMode } = useMainDashContext();
@@ -27,28 +27,11 @@ const App = () => {
     }, 2800);
   }, []);
 
-  const containerRef = useRef(null);
 
-  useEffect(() => {
-    const container = containerRef.current;
-  
-    if (container) {
-      gsap.to(container, {
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 2.5,
-        },
-        y: () => `-${Math.max(0, container.offsetHeight - window.innerHeight)}px`, // Ensure y doesn't go below 0
-        ease: "none",
-      });
-    }
-  }, []);
-  
 
   return (
     <>
+   
       {mousePosition ? (
         <>
           <motion.div
@@ -69,25 +52,23 @@ const App = () => {
           />
         </>
       ) : null}
-        {landingLoaded ? (
-      <div ref={containerRef}>
+      {landingLoaded ? (
           <Holder />
-            </div>
-        ) : (
-          <AnimatePresence>
-            <motion.div
-              className="bg-black w-full h-[100vh] items-center justify-center flex flex-col"
-              exit={{
-                y: 500,
-                transition: {},
-              }}
-            >
-              <Loader xl={"xl"} />
-            </motion.div>
-          </AnimatePresence>
-        )}
-        <Analytics />
-        <SpeedInsights />
+      ) : (
+        <AnimatePresence>
+          <motion.div
+            className="bg-black w-full h-[100vh] items-center justify-center flex flex-col"
+            exit={{
+              y: 500,
+              transition: {},
+            }}
+          >
+            <Loader xl={"xl"} />
+          </motion.div>
+        </AnimatePresence>
+      )}
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 };

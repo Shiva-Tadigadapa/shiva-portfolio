@@ -5,7 +5,7 @@ import { useCursor } from "../context/useCustomCursor";
 const Loader = (props) => {
   const { xl } = props;
   const [removeText, setRemoveText] = useState(false);
-  const { mousePosition, cursorVariant, textEnter, textLeave } = useCursor();
+  const { textEnter, textLeave } = useCursor();
 
   useEffect(() => {
     setTimeout(() => {
@@ -13,7 +13,7 @@ const Loader = (props) => {
     }, 2000);
   }, []);
 
-  const text = "Welcome to my portfolio";
+  const text = "Welcome     to    my  ポトフォリ";
   const words = text.split(" ");
 
   const container = {
@@ -63,7 +63,7 @@ const Loader = (props) => {
       {/* <div className=" h-[100vh] w-full bg-black "> */}
       {!removeText && (
         <motion.div
-          className={`flex   font-bold   text-white text-5xl justify-center items-center`}
+          className={`flex   font-bold    text-white  lg:p-0   md:w-full   md:text-5xl   w-1/4    text-2xl lg:text-5xl justify-center items-center`}
           variants={container}
           initial="hidden"
           animate="visible"

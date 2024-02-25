@@ -49,7 +49,7 @@ const Page5 = () => {
                 href="https://github.com/Shiva-Tadigadapa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3"
+                className="flex items-center gap-8 lg:gap-8"
               >
                 <h1>Github</h1>
                 {isDarkMode ? (
@@ -76,7 +76,7 @@ const Page5 = () => {
                 href="https://linkedin.com/in/tbalashiva/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3"
+                className="flex items-center gap-5  lg:gap-3"
               >
                 <h1 className="">Linkedin</h1>
                 {isDarkMode ? (
@@ -103,7 +103,7 @@ const Page5 = () => {
                 href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3"
+                className="flex items-center gap-8"
               >
                 <h1 className="">Twitter</h1>
                 {isDarkMode ? (
