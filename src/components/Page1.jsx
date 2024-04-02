@@ -51,7 +51,7 @@ const Page1 = () => {
             )}
           </div>
         </div>
-        <div className=" z-[999]  absolute left-0 p-3  mt-6">
+        <div className=" z-[999]   left-0 p-3 fixed  mt-6">
           <DarkModeSwitch
             style={{ marginBottom: "2rem" }}
             checked={isDarkMode}

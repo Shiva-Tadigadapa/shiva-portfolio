@@ -6,10 +6,12 @@ import { useCursor } from "../context/useCustomCursor";
 import Dendro from "../assets/White/ico/Anemo.ico";
 import DendroDark from "../assets/Black/ico/Anemo.ico";
 import { useMainDashContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const Page4 = () => {
   const { textEnter, textLeave } = useCursor();
   const { isDarkMode } = useMainDashContext();
+  const navigate = useNavigate();
   const projects = [
     {
       id: 1,
@@ -17,6 +19,7 @@ const Page4 = () => {
       imageUrl:
         "https://ik.imagekit.io/vsn/port/blackhole.png?updatedAt=1707673554888",
       dis: "Peer-to-peer file sharing, Scalable and distributed file exchange",
+      link: "https://github.com/Shiva-Tadigadapa/BlackHole",
     },
     {
       id: 2,
@@ -24,6 +27,7 @@ const Page4 = () => {
       imageUrl:
         "https://ik.imagekit.io/vsn/port/rvent.png?updatedAt=1707673045432",
       dis: "A complete event management and RSVP tracking software application.",
+      link: "https://rvent.vercel.app/",
     },
     {
       id: 3,
@@ -32,6 +36,7 @@ const Page4 = () => {
         "https://ik.imagekit.io/vsn/port/dvalidate.png?updatedAt=1707673043560",
 
       dis: "A blockchain based certificate validation system.",
+      link: "https://dvalidate.netlify.app/",
     },
     {
       id: 4,
@@ -39,6 +44,7 @@ const Page4 = () => {
       imageUrl:
         "https://ik.imagekit.io/vsn/port/bankai2.jpg?updatedAt=1707669907438",
       dis: "A complete CMS and supply chain system application .",
+      link: "https://github.com/Shiva-Tadigadapa/bankai",
     },
     {
       id: 5,
@@ -46,6 +52,7 @@ const Page4 = () => {
       imageUrl:
         "https://ik.imagekit.io/vsn/port/lmsed.png?updatedAt=1707673555747",
       dis: "A university Learning management system.",
+      link: "",
     },
     {
       id: 6,
@@ -53,11 +60,19 @@ const Page4 = () => {
       imageUrl:
         "https://ik.imagekit.io/vsn/port/healthybyte.png?updatedAt=1707674846498",
       dis: "Health care management with donation, crowdfunding, video conferencing, ecom features.",
+      link: "https://github.com/Shiva-Tadigadapa/HealthByte-ByteBash-Hackathon",
     },
 
     // Add more projects here
   ];
 
+  const bankai = (link) => {
+    if (link) {
+      window.open(link, "_blank");
+    } else {
+      navigate("/");
+    }
+  };
   const projectAnimations = projects.map(() => ({
     controlsImage: useAnimation(),
     controlsText: useAnimation(),
@@ -82,6 +97,7 @@ const Page4 = () => {
           <motion.div
             className="lg:h-[200px] h-[150px] gap-5 flex items-center relative"
             whileHover={{ scale: 0.95 }}
+            onClick={() => bankai(project.link)}
             onHoverStart={() => {
               projectAnimations[index].controlsImage.start({
                 x: 50,

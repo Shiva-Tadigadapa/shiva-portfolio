@@ -4,12 +4,15 @@ import App from "./App.jsx";
 import "./index.css";
 import { MainDashProvider } from "./context/AppContext.jsx";
 import { CursorProvider } from "./context/useCustomCursor.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <MainDashProvider>
       <CursorProvider>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </CursorProvider>
     </MainDashProvider>
   </React.StrictMode>
