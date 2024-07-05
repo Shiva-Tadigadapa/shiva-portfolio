@@ -19,7 +19,11 @@
 .puku{
     font-family: 'puku';
 }
-
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* CustomCursor.css */
 
 .custom-cursor {
@@ -43,7 +47,7 @@
   }
   
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
     cursor: pointer;
   }
   

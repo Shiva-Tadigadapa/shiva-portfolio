@@ -5,15 +5,18 @@ import "./index.css";
 import { MainDashProvider } from "./context/AppContext.jsx";
 import { CursorProvider } from "./context/useCustomCursor.jsx";
 import { BrowserRouter } from "react-router-dom";
+import SmoothScrolling from "./components/Smooth.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MainDashProvider>
-      <CursorProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </CursorProvider>
-    </MainDashProvider>
+    <SmoothScrolling>
+      <MainDashProvider>
+        <CursorProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </CursorProvider>
+      </MainDashProvider>
+    </SmoothScrolling>
   </React.StrictMode>
 );

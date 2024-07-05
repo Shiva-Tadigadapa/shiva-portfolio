@@ -12,7 +12,7 @@ const Holder = () => {
 
   return (
     <>
-       {/* {isDarkMode && (
+      {/* {isDarkMode && (
         <motion.div
           className={'h-screen z-[999] bg-white opacity-0 absolute inset-0'}
           initial={{ opacity: 0.5, y: 0 }}
@@ -28,7 +28,7 @@ const Holder = () => {
           transition={{ duration: 1 }}
         ></motion.div>
       )} */}
-      
+
       <motion.div
         className={`bg-${isDarkMode ? "dark" : "light"} text-${
           isDarkMode ? "light" : "dark"
@@ -41,7 +41,7 @@ const Holder = () => {
         >
           <Page1 />
         </motion.div>
-          <Page2 />
+        <Page2 />
         <Page3 />
         <Page4 />
         <Page5 />

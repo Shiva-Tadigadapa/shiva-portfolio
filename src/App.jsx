@@ -27,11 +27,8 @@ const App = () => {
     }, 2800);
   }, []);
 
-
-
   return (
     <>
-   
       {mousePosition ? (
         <>
           <motion.div
@@ -53,7 +50,7 @@ const App = () => {
         </>
       ) : null}
       {landingLoaded ? (
-          <Holder />
+        <Holder />
       ) : (
         <AnimatePresence>
           <motion.div
