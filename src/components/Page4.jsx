@@ -14,6 +14,39 @@ const Page4 = () => {
   const navigate = useNavigate();
   const projects = [
     {
+      id: 11,
+      name: "Open Source Community",
+      imageUrl:
+        "https://ik.imagekit.io/7da6fpjdo/coverImg/image.png?updatedAt=1728467463548",
+      dis: "Open Source Primitive first - well curated UI library.",
+      link: "https://www.farmui.com/",
+    },
+   
+    {
+      id: 7,
+      name: "Smartsprouts",
+      imageUrl:
+        "https://ik.imagekit.io/7da6fpjdo/coverImg/image.png",
+      dis: "Immerse yourself in a diverse collection of courses, vibrant communities, insightful webinars, and premium digital products.",
+      link: "https://rekhs.netlify.app/",
+    },
+    {
+      id: 8,
+      name: "NoaHr",
+      imageUrl:
+        "https://ik.imagekit.io/7da6fpjdo/coverImg/image.png?updatedAt=1728465819030",
+      dis: "A complete HR management system application.",
+      link: "https://noahr.vercel.app/",
+    },
+    {
+      id: 9,
+      name: "Igris-Movie Streaming",
+      imageUrl:
+        "https://ik.imagekit.io/7da6fpjdo/image.png?updatedAt=1728466148124",
+      dis: "A complete movie streaming application.",
+      link: "https://igris.netlify.app/",
+    },
+    {
       id: 1,
       name: "BlackHole",
       imageUrl:
@@ -29,6 +62,15 @@ const Page4 = () => {
       dis: "A complete event management and RSVP tracking software application.",
       link: "https://rvent.vercel.app/",
     },
+    {
+      id: 10,
+      name: "Bits-Mesra",
+      imageUrl:
+        "https://ik.imagekit.io/vsn/port/bits.png?updatedAt=1707673045432",
+      dis: "A complete university fresher's guide website.",
+      link: "https://adi1816.github.io/Fresher-s-Guide/",
+    },
+  
     {
       id: 3,
       name: "D-Validate",
@@ -54,14 +96,14 @@ const Page4 = () => {
       dis: "A university Learning management system.",
       link: "",
     },
-    {
-      id: 6,
-      name: "Health-Byte",
-      imageUrl:
-        "https://ik.imagekit.io/vsn/port/healthybyte.png?updatedAt=1707674846498",
-      dis: "Health care management with donation, crowdfunding, video conferencing, ecom features.",
-      link: "https://github.com/Shiva-Tadigadapa/HealthByte-ByteBash-Hackathon",
-    },
+    // {
+    //   id: 6,
+    //   name: "Health-Byte",
+    //   imageUrl:
+    //     "https://ik.imagekit.io/vsn/port/healthybyte.png?updatedAt=1707674846498",
+    //   dis: "Health care management with donation, crowdfunding, video conferencing, ecom features.",
+    //   link: "https://github.com/Shiva-Tadigadapa/HealthByte-ByteBash-Hackathon",
+    // },
 
     // Add more projects here
   ];
